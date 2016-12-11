@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import home from './components/home.vue'
+import VueResource from 'vue-resource';
 // import App from './App'
 import index from './index'
 import Hello from './components/Hello.vue'
@@ -15,7 +16,8 @@ import store from './store/index'
 
 var pop = index;
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 // new Vue({
@@ -57,6 +59,14 @@ const router = new VueRouter({
 const app = new Vue({
   store,
   router,
+  ready: function() {
+    this.$http.get('test.json', function(data) {
+      this.$set('menu', data);
+      console.log(data);
+    }).error(function(data, status, request) {
+      console.log('fail' + status + "," + request);
+    })
+  },
   render: h => h(index)
 }).$mount('#app')
 

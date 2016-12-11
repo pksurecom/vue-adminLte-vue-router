@@ -16,7 +16,7 @@ export default {
   name: 'content_header',
   data(){
   	return {
-  		title:"xx管理系统",
+  		title:"xxx管理系统",
   		v:"Version 2.0"
   	}
   },

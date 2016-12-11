@@ -10,65 +10,20 @@
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Admin</b>Lte</span>
       </a>
-      
+
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
+        <!-- Top navigation bar-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          用电管理
+        </a>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-            <li>
-              <a href="#">
-                <span class="hidden-xs">您当前拥有0积分</span>
-              </a>
-            </li>
-            <!-- Messages: style can be found in dropdown.less-->
-            <!-- Notifications: style can be found in dropdown.less -->
-            <li class="dropdown notifications-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">10</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header text-center">您有10条待办事项需要处理</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
-                  <ul class="menu">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                        page and may cause design problems
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-red"></i> 5 new members joined
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-user text-red"></i> You changed your username
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="footer"><a href="#">查看全部</a></li>
-              </ul>
-            </li>
-            <!-- Tasks: style can be found in dropdown.less -->
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -79,30 +34,12 @@
                 <!-- User image -->
                 <li class="user-header">
                   <img src="./dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                   <p>
                     张三 - 前端开发者
                     <small>注册日期：2016年9月14日</small>
                   </p>
                 </li>
                 <!-- Menu Body -->
-                <!-- <li class="user-body"> -->
-                  <!-- <div class="row"> -->
-                    <!-- <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div> -->
-                    <!-- <div class="col-xs-12 text-center">
-                      可用调休时长：10小时
-                    </div> -->
-                  <!-- </div> -->
-                  <!-- &lt;!&ndash; /.row &ndash;&gt; -->
-                <!-- </li> -->
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
@@ -114,13 +51,9 @@
                 </li>
               </ul>
             </li>
-            <!-- Control Sidebar Toggle Button -->
-            <!-- <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-            </li> -->
           </ul>
         </div>
-        
+
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
@@ -189,9 +122,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><router-link to="overtime_record"><i class="fa fa-circle-o"></i> 加班记录</a></li>
-              <li><router-link to="overtime_petitioner"><i class="fa fa-circle-o"></i> 加班申请</a></li>
-              <li><router-link to="overtime_pass"><i class="fa fa-circle-o"></i> 加班审批</a></li>
+              <li><router-link to="overtime_record"><i class="fa fa-circle-o"></i> 加班记录</router-link></li>
+              <li><router-link to="overtime_petitioner"><i class="fa fa-circle-o"></i> 加班申请</router-link></li>
+              <li><router-link to="overtime_pass"><i class="fa fa-circle-o"></i> 加班审批</router-link></li>
               <!--<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>-->
               <!--<li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>-->
               <!--<li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>-->
@@ -206,10 +139,10 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><router-link to="import_data"><i class="fa fa-circle-o"></i> 导入数据</a></li>
+              <li><router-link to="import_data"><i class="fa fa-circle-o"></i> 导入数据</router-link></li>
             </ul>
           </li>
-          
+
           <!-- <li class="header">LABELS</li>
           <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
           <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -421,11 +354,11 @@
   export default {
   data() {
     return {
-        
+
     }
   },
   components: {
-    
+
   },
   mounted(){
     var sUserAgent = navigator.userAgent.toLowerCase();
