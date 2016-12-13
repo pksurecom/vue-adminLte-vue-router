@@ -7,6 +7,7 @@ import VueResource from 'vue-resource';
 import index from './index'
 import Hello from './components/Hello.vue'
 import attendance from './components/attendance.vue'
+import server_setting from './components/server_setting.vue'
 import leave_record from './components/leave_record.vue'
 import overtime_petitioner from './components/overtime_petitioner.vue'
 import overtime_record from './components/overtime_record.vue'
@@ -18,6 +19,23 @@ var pop = index;
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+
+Vue.config.debug = true;
+Vue.config.devtools = true;
+
+Vue.http.options.root = 'http://localhost:8181';
+Vue.http.interceptors.push((request, next)  =>{
+  var a = true;
+  if(a){
+    request.headers.set('token', '+DkdDI2SHStpD');
+  }
+  console.log(request.headers)
+  next((response) => {
+    console.log(response.status)
+    return response
+  });
+
+});
 
 /* eslint-disable no-new */
 // new Vue({
@@ -37,6 +55,7 @@ Vue.use(VueResource);
 // 我们晚点在讨论嵌套路由。
 const routes = [
   { path: '/',name:"home",component: home},
+  { path: '/server_setting',component: server_setting},
   { path: '/attendance',component: attendance},
   { path: '/leave_record',component: leave_record},
   { path: '/overtime_pass',component: overtime_pass},
@@ -60,10 +79,10 @@ const app = new Vue({
   store,
   router,
   ready: function() {
-    this.$http.get('test.json', function(data) {
-      this.$set('menu', data);
-      console.log(data);
-    }).error(function(data, status, request) {
+    this.$http.get('/menus', function(response) {
+      this.$set('menus', response.data.menus);
+      console.log(response);
+    }).error(function(response, status, request) {
       console.log('fail' + status + "," + request);
     })
   },

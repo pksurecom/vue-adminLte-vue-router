@@ -2,7 +2,6 @@
 <template>
   <div id="app" class="wrapper">
     <header class="main-header">
-
       <!-- Logo -->
       <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -10,7 +9,6 @@
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Admin</b>Lte</span>
       </a>
-
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
@@ -56,6 +54,7 @@
 
       </nav>
     </header>
+
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
       <!-- sidebar: style can be found in sidebar.less -->
@@ -70,84 +69,8 @@
             <a href="#"><i class="fa fa-circle text-success"></i>在线</a>
           </div>
         </div>
-        <!-- search form -->
-        <!--<form action="#" method="get" class="sidebar-form">-->
-          <!--<div class="input-group">-->
-            <!--<input type="text" name="q" class="form-control" placeholder="Search...">-->
-              <!--<span class="input-group-btn">-->
-                <!--<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>-->
-                <!--</button>-->
-              <!--</span>-->
-          <!--</div>-->
-        <!--</form>-->
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-          <li class="header">MAIN NAVIGATION</li>
-          <li class="active">
-            <router-link :to="{ path:'/' }">
-              <i class="glyphicon glyphicon-home"></i> <span>主页</span>
-            <!--<span class="pull-right-container">-->
-              <!--<i class="fa fa-angle-left pull-right"></i>-->
-            <!--</span>-->
-            </router-link>
-            <!--<ul class="treeview-menu">-->
-              <!--<li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>-->
-              <!--<li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>-->
-            <!--</ul>-->
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-files-o"></i>
-              <span>考勤管理</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                <!-- <small class="label pull-right bg-green">new</small> -->
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><router-link to="attendance"><i class="fa fa-circle-o"></i>我的考勤记录</router-link></li>
-              <li><router-link to="leave_record"><i class="fa fa-circle-o"></i>调休使用记录</router-link></li>
-              <!--<li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>-->
-              <!--<li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>-->
-              <!--<li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>-->
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-th"></i> <span>加班管理</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                <!-- <small class="label pull-right bg-green">new</small> -->
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><router-link to="overtime_record"><i class="fa fa-circle-o"></i> 加班记录</router-link></li>
-              <li><router-link to="overtime_petitioner"><i class="fa fa-circle-o"></i> 加班申请</router-link></li>
-              <li><router-link to="overtime_pass"><i class="fa fa-circle-o"></i> 加班审批</router-link></li>
-              <!--<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>-->
-              <!--<li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>-->
-              <!--<li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>-->
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-pie-chart"></i> <span>数据管理</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-                <!-- <small class="label pull-right bg-green">new</small> -->
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><router-link to="import_data"><i class="fa fa-circle-o"></i> 导入数据</router-link></li>
-            </ul>
-          </li>
-
-          <!-- <li class="header">LABELS</li>
-          <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-          <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
-        </ul>
+        <left-menu/>
       </section>
       <!-- /.sidebar -->
     </aside>
@@ -155,7 +78,6 @@
     <!-- Content Wrapper. Contains page content -->
     <router-view></router-view>
     <!-- /.content-wrapper -->
-
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -345,38 +267,38 @@
       </div>
     </aside>
     <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
+
+    <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
+
   </div>
 </template>
 <script>
+  import LeftMenu from 'components/left_menu'
   export default {
-  data() {
-    return {
-
-    }
-  },
-  components: {
-
-  },
-  mounted(){
-    var sUserAgent = navigator.userAgent.toLowerCase();
-    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-    var bIsAndroid = sUserAgent.match(/android/i) == "android";
-    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-      alert(1);
-        $("a[href!='#']").attr("data-toggle","offcanvas");
-    }else{
-      // alert(2);
-    }
-  },
-  methods: {}
+      data() {
+          return {
+          }
+      },
+      components: {
+          LeftMenu
+      },
+      mounted(){
+          var sUserAgent = navigator.userAgent.toLowerCase();
+          var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+          var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+          var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+          var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+          var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+          var bIsAndroid = sUserAgent.match(/android/i) == "android";
+          var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+          var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+          if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            alert(1);
+              $("a[href!='#']").attr("data-toggle","offcanvas");
+          }else{
+          }
+      },
+      methods: {}
 }
 </script>

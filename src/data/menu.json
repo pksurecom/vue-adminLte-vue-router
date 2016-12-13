@@ -1,0 +1,20 @@
+{
+  "resultCode": 200,
+  "message": "成功返回",
+  "data": {
+      "menus": [
+          { "name":"基础配置", "sub": [{ "name" : "服务器配置", "url" : "/settings/server_setting"}, { "name" : "提醒配置", "url" : "/settings/tip_setting"}] },
+          { "name":"硬件管理", "sub": [{ "name" : "采集器管理", "url" : "/devices/collectors"}, { "name" : "电表管理", "url" : "/devices/ammeters"}, { "name" : "电表属性", "url" : "/devices/ammeters/props"}] },
+          { "name":"远程操作", "sub": [{ "name" : "远程操作", "url" : "/mans/remote_man"}, { "name" : "购电退电", "url" : "/mans/buy_cancel_man"}] },
+          { "name":"操作日志", "sub": [{ "name" : "充值记录", "url" : "/logs/recharges"}, { "name" : "退款记录", "url" : "/logs/refunds"}, { "name" : "操作日志", "url" : "/logs"}] },
+          { "name":"统计报表", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"角色管理", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"账号管理", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"园区管理", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"楼撞管理", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"楼层管理", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"房间管理", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] },
+          { "name":"个人中心", "sub": [{ "name" : "充值统计", "url" : "/statistics/recharges"}, { "name" : "异常统计", "url" : "/statistics/exceptions"}, { "name" : "用电统计", "url" : "/statistics/electrics"}] }
+      ]
+  }
+}

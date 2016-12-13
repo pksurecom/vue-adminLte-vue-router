@@ -8,8 +8,6 @@ require("!style!css!./css/main.css");
 require("!style!css!./plugins/iCheck/flat/blue.css");
 require("!style!css!./plugins/daterangepicker/daterangepicker.css");
 
-
-
 require("./router.js")
 
 require("./plugins/sparkline/jquery.sparkline.min.js")
